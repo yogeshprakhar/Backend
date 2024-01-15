@@ -1,9 +1,9 @@
 const asyncHandler = (requestHandler) => {
-  (req, res, next) => {
+  return (req, res, next) => {
     Promise.resolve(requestHandler(req, res, next)).catch((err) => next(err));
   };
 };
-
+// (err,req,res,next) if i am using next it means it giving direction to go to the next function (my work is done)
 export { asyncHandler };
 
 // same upper function in try catch way

@@ -1,1 +1,1 @@
-export const DB_NAME = 'learnBackend'
+export const DB_NAME = 'videotube'

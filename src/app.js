@@ -16,14 +16,15 @@ app.use(express.urlencoded({extended:true,limit:"16kb"}))
 // middleware to access static files like images files pdf etc
 app.use(express.static("public"))
 //to access browser cookie from server or can do CRUD operation on browser cookie from server
-
-
-
+app.use(cookieParser())
 // (err,req,res,next) if i am using next it means it giving direction to go to the next function (my work is done)
 
+//routes
+import userRouter from "./routes/user.routes.js"
 
-app.use(cookieParser())
-
+//routes declaration
+app.use("/users",userRouter)
+// https://localhost:8000/api/v1/users/register
 
 
 export {app}
